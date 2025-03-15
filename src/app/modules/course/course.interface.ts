@@ -4,7 +4,7 @@ export interface TCourse  {
   title: string;
   description: string;
   folders: Types.ObjectId[]; 
-  category: "Programming"| "Web Development"| "Mobile Development" | "Business"| "Data Science"| "Personal Development"| "UI/UX Design" | "Machine Learning"|"Artificial Intelligence" ,"Other"
+  category: "Programming"| "Web Development"| "Mobile Development" | "Business"| "Data Science"| "Personal Development"| "UI/UX Design" | "Machine Learning"|"Artificial Intelligence" |"Other"
   instructors: Types.ObjectId[];
   buyerStudents: Types.ObjectId[]; 
   reviews: Types.ObjectId[]; 
@@ -17,21 +17,28 @@ export interface TCourse  {
   updatedAt: Date;
 }
 
-export interface TCourseFolder {
+export interface TCourseMilestone {
   name: string;
   courseId: Types.ObjectId;
   position: number;
   contents: Types.ObjectId[]
-  createdAt: Date;
-  updatedAt: Date;
+  modules: Types.ObjectId[]
+}
+
+export interface TCourseModule {
+  name: string;
+  courseId: Types.ObjectId;
+  milestoneId: Types.ObjectId;
+  position: number;
+  contents: Types.ObjectId[]
 }
 
 export interface TCourseContent  {
-  folderId: Types.ObjectId;
+ courseId: Types.ObjectId;
+ moduleId: Types.ObjectId;
+ milestoneId: Types.ObjectId;
   title: string;
   type: "video" | "text" | "document";
   url: string;
   position: number;
-  createdAt: Date;
-  updatedAt: Date;
 }

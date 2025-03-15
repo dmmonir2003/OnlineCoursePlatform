@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
-import { TCourse, TCourseContent, TCourseFolder } from "./course.interface";
+import { TCourse, TCourseContent, TCourseMilestone, TCourseModule } from "./course.interface";
 
 const { Schema, model } = mongoose;
+
+
 
 const courseSchema = new Schema<TCourse>(
   {
@@ -29,19 +31,41 @@ const courseSchema = new Schema<TCourse>(
   { timestamps: true }
 );
 
-const courseFolder = new Schema<TCourseFolder>(
+
+
+
+
+const courseMilestone = new Schema<TCourseMilestone>(
   {
     name: { type: String, required: true },
     courseId: { type: Schema.Types.ObjectId, ref: "Course", required: true },
     position: { type: Number, required: true },
-    contents: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Content' }],
+    contents: [{ type: mongoose.Schema.Types.ObjectId, ref: 'CourseContent' }],
+    modules: [{ type: mongoose.Schema.Types.ObjectId, ref: 'CourseModule' }],
   },
   { timestamps: true }
 );
 
+
+
+const courseModule = new Schema<TCourseModule>(
+  {
+    name: { type: String, required: true },
+    courseId: { type: Schema.Types.ObjectId, ref: "Course", required: true },
+    milestoneId: { type: Schema.Types.ObjectId, ref: "CourseMilestone", required: true },
+    position: { type: Number, required: true },
+    contents: [{ type: mongoose.Schema.Types.ObjectId, ref: 'CourseContent' }],
+  },
+  { timestamps: true }
+);
+
+
+
 const courseContent = new Schema<TCourseContent>(
   {
-    folderId: { type: Schema.Types.ObjectId, ref: "Folder", required: true },
+    courseId: { type: Schema.Types.ObjectId, ref: "Course" },
+    moduleId: { type: Schema.Types.ObjectId, ref: "CourseModule" },
+    milestoneId: { type: Schema.Types.ObjectId, ref: "CourseMilestone", required: true },
     title: { type: String, required: true },
     type: { type: String, enum: ["video", "text", "document"], required: true },
     url: { type: String, required: true },
@@ -51,7 +75,8 @@ const courseContent = new Schema<TCourseContent>(
 );
 
 export const Course = model("Course", courseSchema);
-export const CourseFolder = model("CourseFolder", courseFolder);
+export const CourseMilestone = model("CourseMilestone", courseMilestone);
+export const CourseModule = model("CourseModule", courseModule);
 export const CourseContent = model("CourseContent", courseContent);
 
 
