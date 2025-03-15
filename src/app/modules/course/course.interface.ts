@@ -3,15 +3,15 @@ import { Types } from "mongoose";
 export interface TCourse  {
   title: string;
   description: string;
-  folders: Types.ObjectId[]; 
+  milestones: Types.ObjectId[]; 
   category: "Programming"| "Web Development"| "Mobile Development" | "Business"| "Data Science"| "Personal Development"| "UI/UX Design" | "Machine Learning"|"Artificial Intelligence" |"Other"
   instructors: Types.ObjectId[];
-  buyerStudents: Types.ObjectId[]; 
+  enrolledStudents: Types.ObjectId[]; 
   reviews: Types.ObjectId[]; 
   announcements: Types.ObjectId[]; 
   createdBy: Types.ObjectId;
   tags: "JavaScript"|"Python"|"React"|"Node.js"
-  visibility:"public"| "private"| "draft"
+  visibility:"public"| "private"| "pending"
   isDeleted:boolean
   createdAt: Date;
   updatedAt: Date;

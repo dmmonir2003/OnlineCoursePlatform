@@ -9,7 +9,7 @@ const courseSchema = new Schema<TCourse>(
   {
     title: { type: String, required: true },
     description: { type: String, required: true },
-    folders: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Folder' }],
+    milestones: [{ type: mongoose.Schema.Types.ObjectId, ref: 'CourseMilestone' }],
     category: {
       type: String,
       required: true,
@@ -17,14 +17,13 @@ const courseSchema = new Schema<TCourse>(
     },
     tags: {
       type: String,
-      required: true,
       enum: ["JavaScript", "Python", "React", "Node.js"]
     },
     instructors: [{ type: Schema.Types.ObjectId, ref: "User", required: true }],
-    buyerStudents: [{ type: Schema.Types.ObjectId, ref: "Payment" }],
+    enrolledStudents: [{ type: Schema.Types.ObjectId, ref: "User" }],
     reviews: [{ type: Schema.Types.ObjectId, ref: "Review" }],
     announcements: [{ type: Schema.Types.ObjectId, ref: "Announcement" }],
-    visibility: { type: String, enum: ["public", "private", "draft"], default: "public" },
+    visibility: { type: String, enum: ["public", "private", "pending"], default: "public" },
     createdBy: { type: Schema.Types.ObjectId, ref: "User", required: true },
     isDeleted: { type: Boolean, default: false }
   },
