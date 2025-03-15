@@ -37,6 +37,20 @@ userSchema.post<IUser>('save', function (doc, next) {
   next();
 });
 
+userSchema.statics.checkUserExistById = async function (
+  id: string,
+): Promise<boolean> {
+  const user = await this.findById(id);
+  return !!user;
+};
+
+userSchema.static.comparePassword = async function (
+  inputPassword: string,
+  storedPassword: string,
+): Promise<boolean> {
+  return bcrypt.compareSync(inputPassword, storedPassword);
+};
+
 const User = model<IUser>('User', userSchema);
 
 export default User;
