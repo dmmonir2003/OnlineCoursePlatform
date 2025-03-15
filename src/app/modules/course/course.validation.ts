@@ -27,7 +27,6 @@ export const CourseValidationSchema = z.object({
     enrolledStudents: z.array(ObjectIdSchema).optional(),
     reviews: z.array(ObjectIdSchema).optional(),
     announcements: z.array(ObjectIdSchema).optional(),
-    createdBy: ObjectIdSchema,
     tags: z.enum(["JavaScript", "Python", "React", "Node.js"]).optional(),
     visibility: z.enum(["public", "private", "pending"]).default("public"),
     isDeleted: z.boolean().default(false),
