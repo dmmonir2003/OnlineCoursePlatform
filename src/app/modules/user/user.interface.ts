@@ -8,3 +8,11 @@ export type IUser = {
   createdAt: Date;
   updatedAt: Date;
 };
+
+export interface IUserMethods {
+  checkUserExistById(id: string): Promise<boolean>;
+  comparePassword(
+    inputPassword: string,
+    storedPassword: string,
+  ): Promise<boolean>;
+}
