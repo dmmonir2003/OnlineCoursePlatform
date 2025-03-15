@@ -8,12 +8,23 @@ const courseSchema = new Schema<TCourse>(
     title: { type: String, required: true },
     description: { type: String, required: true },
     folders: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Folder' }],
-    category: { type: String, required: true },
+    category: {
+      type: String,
+      required: true,
+      enum: ["Programming", "Web Development", "Mobile Development", "UI/UX Design", "Business", "Data Science", "Personal Development", "Machine Learning", "Artificial Intelligence", "Other"]
+    },
+    tags: {
+      type: String,
+      required: true,
+      enum: ["JavaScript", "Python", "React", "Node.js"]
+    },
     instructors: [{ type: Schema.Types.ObjectId, ref: "User", required: true }],
     buyerStudents: [{ type: Schema.Types.ObjectId, ref: "Payment" }],
     reviews: [{ type: Schema.Types.ObjectId, ref: "Review" }],
     announcements: [{ type: Schema.Types.ObjectId, ref: "Announcement" }],
-    createdBy:{ type: Schema.Types.ObjectId, ref: "User", required: true }
+    visibility: { type: String, enum: ["public", "private", "draft"], default: "public" },
+    createdBy: { type: Schema.Types.ObjectId, ref: "User", required: true },
+    isDeleted: { type: Boolean, default: false }
   },
   { timestamps: true }
 );
@@ -21,8 +32,8 @@ const courseSchema = new Schema<TCourse>(
 const courseFolder = new Schema<TCourseFolder>(
   {
     name: { type: String, required: true },
-    courseId:  { type: Schema.Types.ObjectId, ref: "Course", required: true },
-    position:{type:Number,required:true},
+    courseId: { type: Schema.Types.ObjectId, ref: "Course", required: true },
+    position: { type: Number, required: true },
     contents: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Content' }],
   },
   { timestamps: true }
@@ -30,10 +41,10 @@ const courseFolder = new Schema<TCourseFolder>(
 
 const courseContent = new Schema<TCourseContent>(
   {
-    folderId:  { type: Schema.Types.ObjectId, ref: "Folder", required: true },
+    folderId: { type: Schema.Types.ObjectId, ref: "Folder", required: true },
     title: { type: String, required: true },
     type: { type: String, enum: ["video", "text", "document"], required: true },
-    url: { type: String, required: true }, 
+    url: { type: String, required: true },
     position: { type: Number, required: true },
   },
   { timestamps: true }

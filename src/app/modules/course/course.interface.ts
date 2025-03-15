@@ -4,12 +4,15 @@ export interface TCourse  {
   title: string;
   description: string;
   folders: Types.ObjectId[]; 
-  category: string;
+  category: "Programming"| "Web Development"| "Mobile Development" | "Business"| "Data Science"| "Personal Development"| "UI/UX Design" | "Machine Learning"|"Artificial Intelligence" ,"Other"
   instructors: Types.ObjectId[];
   buyerStudents: Types.ObjectId[]; 
   reviews: Types.ObjectId[]; 
   announcements: Types.ObjectId[]; 
   createdBy: Types.ObjectId;
+  tags: "JavaScript"|"Python"|"React"|"Node.js"
+  visibility:"public"| "private"| "draft"
+  isDeleted:boolean
   createdAt: Date;
   updatedAt: Date;
 }
