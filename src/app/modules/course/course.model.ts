@@ -63,7 +63,7 @@ const courseModule = new Schema<TCourseModule>(
 
 const courseContent = new Schema<TCourseContent>(
   {
-    courseId: { type: Schema.Types.ObjectId, ref: "Course" },
+    courseId: { type: Schema.Types.ObjectId, ref: "Course",required: true  },
     moduleId: { type: Schema.Types.ObjectId, ref: "CourseModule" },
     milestoneId: { type: Schema.Types.ObjectId, ref: "CourseMilestone", required: true },
     title: { type: String, required: true },

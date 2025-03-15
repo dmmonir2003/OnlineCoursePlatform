@@ -18,6 +18,8 @@ const createCourseMilestone = catchAsync(async (req, res) => {
   const result = await CourseServices.createCourseMilestone(payload);
   return sendCreated(res, result, 'Course milestone created successfully');
 });
+
+
 const createCourseModule = catchAsync(async (req, res) => {
   const payload = req.body;
 

@@ -62,9 +62,6 @@ export const CourseContentValidationSchema = z.object({
     moduleId: ObjectIdSchema.nullable(),
     milestoneId: ObjectIdSchema.nullable(),
     title: z.string().min(1, "Content title is required"),
-    type: z.enum(["video", "text", "document"]),
-    url: z.string({required_error:"Url is required!"
-    }).url("Invalid URL!"),
     position: z.number({required_error:"Position is required"}).min(0),
  }).refine(
     (data) => data.moduleId || data.milestoneId,
