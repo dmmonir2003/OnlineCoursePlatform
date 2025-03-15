@@ -1,0 +1,38 @@
+Here are some useful links for templates and designs:
+
+1. **Education Online Courses (React + Next.js Template)**  
+   [https://preview.themeforest.net/item/eduman-education-online-courses-react-nextjs-template/full_screen_preview/37315333](https://preview.themeforest.net/item/eduman-education-online-courses-react-nextjs-template/full_screen_preview/37315333)
+
+2. **iLearning Dashboard (Online Education Platform HTML5 Template)**  
+   [https://preview.themeforest.net/item/ilearning-dashboard-online-education-platform-dashboard-html5-template/full_screen_preview/52445305](https://preview.themeforest.net/item/ilearning-dashboard-online-education-platform-dashboard-html5-template/full_screen_preview/52445305)
+
+### Dashboard Designs:
+
+3. **Edumin - Education Admin Dashboard Template**  
+   [https://preview.themeforest.net/item/edumin-education-admin-dashboard-template/full_screen_preview/29348713](https://preview.themeforest.net/item/edumin-education-admin-dashboard-template/full_screen_preview/29348713)
+
+4. **Wellco - Coach Online Courses (WordPress Template)**  
+   [https://preview.themeforest.net/item/wellco-coach-online-courses-wordpress/full_screen_preview/33801022](https://preview.themeforest.net/item/wellco-coach-online-courses-wordpress/full_screen_preview/33801022)
+
+5. **Bisy - Online Courses & Education React Template**  
+   [https://preview.themeforest.net/item/bisy-online-courses-education-react-template/full_screen_preview/46885752](https://preview.themeforest.net/item/bisy-online-courses-education-react-template/full_screen_preview/46885752)
+
+### Dashboard Pages:
+
+6. **Ynex Flask - Admin Dashboard Template**  
+   [https://preview.themeforest.net/item/ynex-flask-admin-dashboard-template/full_screen_preview/49482669](https://preview.themeforest.net/item/ynex-flask-admin-dashboard-template/full_screen_preview/49482669)
+
+7. **Ynex Flask - Live Demo**  
+   [https://spruko.com/demo/flask/ynex/dist/html/index.html](https://spruko.com/demo/flask/ynex/dist/html/index.html)
+
+8. **Meno - Bootstrap Admin Dashboard HTML Template**  
+   [https://preview.themeforest.net/item/meno-bootstrap-admin-dashboard-html-template/full_screen_preview/56432269](https://preview.themeforest.net/item/meno-bootstrap-admin-dashboard-html-template/full_screen_preview/56432269)
+
+9. **Online Course Website Template (Astra)**  
+   [https://wpastra.com/website-templates/elearning/online-course/](https://wpastra.com/website-templates/elearning/online-course/)
+
+### Figma Design:
+
+10. **Figma Community Design File**  
+    [https://www.figma.com/community/file/1444252888298116868](https://www.figma.com/community/file/1444252888298116868)
+
