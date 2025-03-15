@@ -4,18 +4,31 @@ import catchAsync from '../../utils/catchAsync';
 import { CourseServices } from './course.service';
 
 
+// #TODO ..auth gurd hoile payload a created by bosate hbe createCourse a
 
 const createCourse = catchAsync(async (req, res) => {
   const payload = req.body;
-  const userId =  "67d544812ae90118dbc3d05f"
-  payload.createdBy=userId;
-//   console.log({payload});
-  const result = await CourseServices.createCourse(req.body);
+  const result = await CourseServices.createCourse(payload);
   return sendCreated(res, result, 'Course created successfully');
+});
+
+const createCourseMilestone = catchAsync(async (req, res) => {
+  const payload = req.body;
+
+  const result = await CourseServices.createCourseMilestone(payload);
+  return sendCreated(res, result, 'Course milestone created successfully');
+});
+const createCourseModule = catchAsync(async (req, res) => {
+  const payload = req.body;
+
+  const result = await CourseServices.createCourseModule(payload);
+  return sendCreated(res, result, 'Course module created successfully');
 });
 
 
 
 export const CourseControllers = {
   createCourse,
+  createCourseMilestone,
+  createCourseModule
 };
