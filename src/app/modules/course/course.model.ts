@@ -52,7 +52,7 @@ const courseModule = new Schema<TCourseModule>(
   {
     name: { type: String, required: true },
     courseId: { type: Schema.Types.ObjectId, ref: "Course", required: true },
-    milestoneId: { type: Schema.Types.ObjectId, ref: "CourseMilestone", required: true },
+    milestoneId: { type: Schema.Types.ObjectId, ref: "CourseMilestone"},
     position: { type: Number, required: true },
     contents: [{ type: mongoose.Schema.Types.ObjectId, ref: 'CourseContent' }],
   },
@@ -65,7 +65,7 @@ const courseContent = new Schema<TCourseContent>(
   {
     courseId: { type: Schema.Types.ObjectId, ref: "Course",required: true  },
     moduleId: { type: Schema.Types.ObjectId, ref: "CourseModule" },
-    milestoneId: { type: Schema.Types.ObjectId, ref: "CourseMilestone", required: true },
+    milestoneId: { type: Schema.Types.ObjectId, ref: "CourseMilestone" },
     title: { type: String, required: true },
     type: { type: String, enum: ["video", "text", "document"], required: true },
     url: { type: String, required: true },

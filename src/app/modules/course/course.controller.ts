@@ -29,8 +29,19 @@ const createCourseModule = catchAsync(async (req, res) => {
 
 
 
+const createCourseContent = catchAsync(async (req, res) => {
+  const payload = req.body
+  const file = req.file;
+
+  const result = await CourseServices.createCourseContent(file, payload)
+  return sendCreated(res, result, 'Course content created successfully');
+})
+
+
+
 export const CourseControllers = {
   createCourse,
   createCourseMilestone,
-  createCourseModule
+  createCourseModule,
+  createCourseContent
 };
