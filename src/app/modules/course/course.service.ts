@@ -7,6 +7,53 @@ const createCourse = async (payload:{payload:TCourse} ) => {
   const result = await Course.create(payload);
   return result
 };
+
+
+
+
+// const createCourseMilestone = async (payload: TCourseMilestone) => {
+//   const session = await mongoose.startSession();
+//   session.startTransaction();
+
+//   try {
+
+//     const [createMilestone] = await CourseMilestone.create(
+//       [payload],
+//       { session },
+//     );
+
+//     if (!createMilestone?._id) {
+//       throw new AppError('Course milestone creation failed!', 500);
+//     }
+
+//     const updateCourse = await Course.findByIdAndUpdate(
+//       payload.courseId,
+//       { $push: { milestones: createMilestone[0]._id } },
+//       { session }
+//     );
+
+//     await session.commitTransaction();
+
+//     return updateCourse;
+//     // eslint-disable-next-line no-unused-vars
+//   } catch (error: any) {
+//     await session.abortTransaction();
+//     throw new AppError('Course milestone creation failed!555', 500);
+
+//   } finally {
+//     session.endSession();
+//     // Verification Point 4: Check session state
+//   }
+// }
+
+
+
+
+
+
+
+
+
 const createCourseMilestone = async (payload:{payload:TCourseMilestone} ) => {
   const result = await CourseMilestone.create(payload);
   return result
